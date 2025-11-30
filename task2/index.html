@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezang La 1962 - A Tribute to Valor</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>REZANG LA</h1>
+            <div class="hero-date">18 November 1962</div>
+            <p class="hero-subtitle">"How can men die better than facing fearful odds, for the ashes of their fathers and the temples of their gods"</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">The Battle That Defined Courage</h2>
+        <div class="story">
+            <p>On the freezing heights of Rezang La at 16,000 feet in Ladakh, 120 soldiers of the 13th Battalion, Kumaon Regiment (13 KUMAON), commanded by Major Shaitan Singh, wrote one of the most glorious chapters in military history. Facing over 5,000 Chinese troops in sub-zero temperatures, these brave hearts chose death over dishonor.</p>
+            <br>
+            <p>Despite being heavily outnumbered and running out of ammunition, not a single soldier retreated. They fought till their last breath, with many found frozen in their battle positions, still clutching their rifles. The Chinese forces were so impressed by their valor that they left the post undisturbed as a mark of respect.</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">120</div>
+                <div class="stat-label">Indian Soldiers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3000+</div>
+                <div class="stat-label">Enemy Troops</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">114</div>
+                <div class="stat-label">Martyrs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1300+</div>
+                <div class="stat-label">Enemy Casualties</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="quote">
+        To die with your boots on and gun in hand is the highest hope of a soldier
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">The Hero of Rezang La</h2>
+        <div class="hero-card">
+            <h3>Major Shaitan Singh, PVC (Posthumous)</h3>
+            <p>Major Shaitan Singh led his troops with exceptional courage and leadership. Despite being grievously wounded early in the battle, he refused to be evacuated and continued to direct his men. His last words were reportedly encouraging his troops to fight till the end. For his extraordinary valor, he was posthumously awarded the Param Vir Chakra, India's highest military decoration.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">The Battle Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">Dawn, 18 November 1962</div>
+                <p>Chinese forces begin their attack with heavy mortar and artillery fire on Rezang La ridge.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">Morning Hours</div>
+                <p>Multiple waves of Chinese troops assault the Indian positions. Each wave is repelled with heavy casualties to the enemy.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">Afternoon</div>
+                <p>Running low on ammunition, the soldiers engage in hand-to-hand combat. Major Shaitan Singh, though wounded, continues to motivate his troops.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">Evening</div>
+                <p>The last of the ammunition exhausted, soldiers fight with bayonets and bare hands. 114 soldiers attain martyrdom, but the enemy is forced to withdraw after suffering over 1300 casualties.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section memorial">
+        <h2 class="section-title">In Eternal Memory</h2>
+        <div class="flame"></div>
+        <p style="font-size: 1.3rem; line-height: 1.8; max-width: 800px; margin: 30px auto;">
+            The supreme sacrifice of the heroes of Rezang La will forever inspire generations of Indians. They stood like an unbreakable wall against overwhelming odds, defending every inch of our motherland with their blood. Their courage turned the tide and inflicted such heavy casualties that the enemy never dared to advance further.
+        </p>
+        <br>
+        <p style="font-size: 1.5rem; color: #ff9933; font-weight: bold; margin-top: 30px;">
+            JAI HIND!
+        </p>
+        <br>
+        <p>
+            For A cinematic experience Movie <a style ="color: bisque;" href="https://www.youtube.com/watch?v=r4HusFmN4uw"> 120 BAHADUR </a> is released recently to honour the Warriors 
+        </p>
+        
+        
+    </section>
+
+    <script>
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .hero-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+
+    </script>
+</body>
+</html>
